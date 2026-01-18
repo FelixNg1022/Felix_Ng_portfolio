@@ -63,7 +63,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
               <a
                 href="#contact"
-                className="group px-8 py-4 bg-accent-600 text-primary-600 rounded-xl font-semibold hover:bg-accent-700 transition-all duration-200 flex items-center justify-center cursor-pointer"
+                className="group px-8 py-4 bg-white/60 backdrop-blur-sm border border-primary-300 text-primary-900 rounded-xl font-semibold hover:bg-white hover:border-accent-600 transition-all duration-200 flex items-center justify-center cursor-pointer"
               >
                 Get In Touch
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
