@@ -26,3 +26,4 @@ dist-ssr
 .cursor
 .node_modules
 .shared
+.vercel
