@@ -3,6 +3,12 @@ import { ExternalLink, Github, Award } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
+      title: 'RoastMySubs',
+      description: `RoastMySubs is a Chrome extension that connects to your bank via Plaid to automatically detect subscription payments.`,
+      tech: ['TypeScript', 'HTML', 'JavaScript', 'Plaid', 'Gemini'],
+      github: 'https://github.com/promatty/nw-hacks2026',
+    },
+    {
       title: 'JobMatch AI',
       description: 'AI agent that automates job matching using Zypher framework, analyzing resumes and providing fit scores with personalized suggestions.',
       tech: ['TypeScript', 'Deno', 'Zypher', 'Groq API', 'RxJS'],
@@ -20,7 +26,7 @@ const Projects = () => {
       title: 'Schedulii',
       description: 'Event-planning app with Google Calendar integration, deployed on AWS with Kubernetes.',
       tech: ['React', 'TypeScript', 'PostgreSQL', 'Go', 'AWS', 'Redis'],
-      github: 'https://github.com/lou-weng/schedulii',
+      github: 'https://github.com/FelixNg1022/schedulii',
     },
   ]
 
