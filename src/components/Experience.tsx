@@ -33,10 +33,10 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="py-20 bg-primary-50">
+    <section id="experience" className="py-20 bg-primary-50 dark:bg-primary-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-900 mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-900 dark:text-white mb-4">
             Experience
           </h2>
           <div className="w-16 h-1 bg-accent-600 mx-auto"></div>
@@ -46,31 +46,31 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group bg-white/60 backdrop-blur-sm border border-primary-200 rounded-xl p-6 md:p-8 hover:bg-white hover:border-accent-600 hover:shadow-lg transition-all duration-200"
+              className="group bg-white/60 dark:bg-primary-800/60 backdrop-blur-sm border border-primary-200 dark:border-primary-700 rounded-xl p-6 md:p-8 hover:bg-white dark:hover:bg-primary-800 hover:border-accent-600 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-200"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div className="flex items-start space-x-4 mb-4 md:mb-0">
-                  <div className="flex-shrink-0 p-3 bg-accent-100 rounded-lg group-hover:bg-accent-600 transition-colors">
-                    <Briefcase className="w-5 h-5 text-accent-600 group-hover:text-white transition-colors" />
+                  <div className="flex-shrink-0 p-3 bg-accent-100 dark:bg-primary-700 rounded-lg group-hover:bg-accent-600 dark:group-hover:bg-primary-600 transition-colors">
+                    <Briefcase className="w-5 h-5 text-accent-600 dark:text-primary-300 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="font-display text-xl font-bold text-primary-900">
+                    <h3 className="font-display text-xl font-bold text-primary-900 dark:text-white">
                       {exp.title}
                     </h3>
-                    <p className="text-accent-600 font-semibold">
+                    <p className="text-accent-600 dark:text-accent-400 font-semibold">
                       {exp.company}
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center text-primary-600 text-sm md:ml-4">
+                <div className="flex items-center text-primary-600 dark:text-primary-400 text-sm md:ml-4">
                   <Calendar className="w-4 h-4 mr-2" />
                   <span>{exp.period}</span>
                 </div>
               </div>
               <ul className="space-y-2 md:ml-16">
                 {exp.description.map((item, idx) => (
-                  <li key={idx} className="text-primary-700 flex items-start">
-                    <span className="text-accent-600 mr-2">•</span>
+                  <li key={idx} className="text-primary-700 dark:text-primary-300 flex items-start">
+                    <span className="text-accent-600 dark:text-accent-400 mr-2">•</span>
                     <span className="text-sm">{item}</span>
                   </li>
                 ))}
