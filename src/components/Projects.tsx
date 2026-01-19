@@ -25,10 +25,10 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white dark:bg-primary-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-900 mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-900 dark:text-white mb-4">
             Projects
           </h2>
           <div className="w-16 h-1 bg-accent-600 mx-auto"></div>
@@ -38,32 +38,32 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group bg-white/60 backdrop-blur-sm border rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all duration-200 ${
-                project.featured ? 'border-accent-600' : 'border-primary-200 hover:border-accent-600'
+              className={`group bg-white/60 dark:bg-primary-900/60 backdrop-blur-sm border rounded-xl p-6 hover:bg-white dark:hover:bg-primary-800 hover:shadow-xl transition-all duration-200 ${
+                project.featured ? 'border-accent-600 dark:border-primary-500' : 'border-primary-200 dark:border-primary-700 hover:border-accent-600 dark:hover:border-primary-500'
               }`}
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-display text-xl font-bold text-primary-900">
+                <h3 className="font-display text-xl font-bold text-primary-900 dark:text-white">
                   {project.title}
                 </h3>
                 {project.award && (
-                  <Award className="w-5 h-5 text-yellow-600" />
+                  <Award className="w-5 h-5 text-yellow-600 dark:text-yellow-500" />
                 )}
               </div>
 
-              <p className="text-primary-700 text-sm mb-4 leading-relaxed">{project.description}</p>
+              <p className="text-primary-700 dark:text-primary-300 text-sm mb-4 leading-relaxed">{project.description}</p>
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.slice(0, 4).map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-2 py-1 bg-accent-100 text-accent-700 text-xs rounded-md font-medium"
+                    className="px-2 py-1 bg-accent-100 dark:bg-primary-700 text-accent-700 dark:text-primary-300 text-xs rounded-md font-medium"
                   >
                     {tech}
                   </span>
                 ))}
                 {project.tech.length > 4 && (
-                  <span className="px-2 py-1 bg-primary-100 text-primary-700 text-xs rounded-md font-medium">
+                  <span className="px-2 py-1 bg-primary-100 dark:bg-primary-600 text-primary-700 dark:text-primary-200 text-xs rounded-md font-medium">
                     +{project.tech.length - 4}
                   </span>
                 )}
@@ -74,7 +74,7 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-accent-600 hover:text-accent-700 font-semibold text-sm transition-colors group cursor-pointer"
+                  className="inline-flex items-center text-accent-600 dark:text-primary-300 hover:text-accent-700 dark:hover:text-white font-semibold text-sm transition-colors group cursor-pointer"
                 >
                   <Github className="mr-2" size={16} />
                   View Code
@@ -90,7 +90,7 @@ const Projects = () => {
             href="https://github.com/felixng1022"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-primary-900 text-white rounded-xl hover:bg-primary-800 transition-all duration-200 font-semibold cursor-pointer"
+            className="inline-flex items-center px-6 py-3 bg-primary-900 dark:bg-primary-700 text-white rounded-xl hover:bg-primary-800 dark:hover:bg-primary-600 transition-all duration-200 font-semibold cursor-pointer"
           >
             <Github className="mr-2" size={20} />
             More on GitHub

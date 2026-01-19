@@ -27,10 +27,10 @@ const Skills = () => {
   ]
 
   return (
-    <section id="skills" className="py-20 bg-primary-50">
+    <section id="skills" className="py-20 bg-primary-50 dark:bg-primary-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-900 mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-900 dark:text-white mb-4">
             Skills
           </h2>
           <div className="w-16 h-1 bg-accent-600 mx-auto"></div>
@@ -40,16 +40,16 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-white/60 backdrop-blur-sm border border-primary-200 rounded-xl p-6 hover:bg-white hover:border-accent-600 hover:shadow-lg transition-all duration-200"
+              className="bg-white/60 dark:bg-primary-800/60 backdrop-blur-sm border border-primary-200 dark:border-primary-700 rounded-xl p-6 hover:bg-white dark:hover:bg-primary-800 hover:border-accent-600 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-200"
             >
-              <h3 className="font-display text-lg font-bold text-primary-900 mb-4 pb-2 border-b-2 border-accent-600">
+              <h3 className="font-display text-lg font-bold text-primary-900 dark:text-white mb-4 pb-2 border-b-2 border-accent-600 dark:border-primary-500">
                 {category.category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1.5 bg-accent-50 text-accent-700 text-sm rounded-lg hover:bg-accent-100 transition-colors cursor-default"
+                    className="px-3 py-1.5 bg-accent-50 dark:bg-primary-700 text-accent-700 dark:text-primary-300 text-sm rounded-lg hover:bg-accent-100 dark:hover:bg-primary-600 transition-colors cursor-default"
                   >
                     {skill}
                   </span>

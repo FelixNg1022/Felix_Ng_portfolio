@@ -5,6 +5,7 @@ import { useTheme } from '../context/ThemeContext'
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,48 +31,64 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className={`bg-white/60 backdrop-blur-lg border border-primary-200 rounded-2xl px-6 py-4 shadow-sm ${
+        <div className={`bg-white/60 dark:bg-primary-900/60 backdrop-blur-lg border border-primary-200 dark:border-primary-700 rounded-2xl px-6 py-4 shadow-sm ${
           isScrolled ? 'shadow-lg' : ''
         }`}>
           <div className="flex justify-between items-center">
             <a
               href="#hero"
-              className="font-display text-xl font-bold text-primary-900 hover:text-accent-600 transition-colors cursor-pointer"
+              className="font-display text-xl font-bold text-primary-900 dark:text-white hover:text-accent-600 dark:hover:text-primary-300 transition-colors cursor-pointer"
             >
               Felix Ng
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-primary-700 hover:text-accent-600 transition-colors font-medium cursor-pointer"
+                  className="text-primary-700 dark:text-primary-300 hover:text-accent-600 dark:hover:text-white transition-colors font-medium cursor-pointer"
                 >
                   {link.label}
                 </a>
               ))}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg bg-primary-100 dark:bg-primary-800 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-700 transition-colors cursor-pointer"
+                aria-label="Toggle dark mode"
+              >
+                {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-primary-900 cursor-pointer"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="md:hidden flex items-center space-x-2">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg bg-primary-100 dark:bg-primary-800 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-700 transition-colors cursor-pointer"
+                aria-label="Toggle dark mode"
+              >
+                {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              </button>
+              <button
+                className="text-primary-900 dark:text-white cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 pt-4 border-t border-primary-200">
+            <div className="md:hidden mt-4 pt-4 border-t border-primary-200 dark:border-primary-700">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block py-2 text-primary-700 hover:text-accent-600 transition-colors font-medium cursor-pointer"
+                  className="block py-2 text-primary-700 dark:text-primary-300 hover:text-accent-600 dark:hover:text-white transition-colors font-medium cursor-pointer"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

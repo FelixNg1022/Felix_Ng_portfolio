@@ -29,14 +29,14 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 bg-primary-50">
+    <section id="contact" className="py-20 bg-primary-50 dark:bg-primary-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-900 mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-900 dark:text-white mb-4">
             Contact
           </h2>
           <div className="w-16 h-1 bg-accent-600 mx-auto mb-6"></div>
-          <p className="text-lg text-primary-700 max-w-2xl mx-auto">
+          <p className="text-lg text-primary-700 dark:text-primary-300 max-w-2xl mx-auto">
             Open to internship opportunities and collaborations
           </p>
         </div>
@@ -46,7 +46,7 @@ const Contact = () => {
             {contactInfo.map((contact, index) => (
               <div
                 key={index}
-                className="bg-white/60 backdrop-blur-sm border border-primary-200 rounded-xl p-6 hover:bg-white hover:border-accent-600 hover:shadow-lg transition-all duration-200"
+                className="bg-white/60 dark:bg-primary-800/60 backdrop-blur-sm border border-primary-200 dark:border-primary-700 rounded-xl p-6 hover:bg-white dark:hover:bg-primary-800 hover:border-accent-600 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-200"
               >
                 {contact.href ? (
                   <a
@@ -55,28 +55,28 @@ const Contact = () => {
                     rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="flex items-center space-x-4 group cursor-pointer"
                   >
-                    <div className="flex-shrink-0 p-3 bg-accent-100 rounded-lg group-hover:bg-accent-600 transition-colors">
-                      <div className="text-accent-600 group-hover:text-white transition-colors">{contact.icon}</div>
+                    <div className="flex-shrink-0 p-3 bg-accent-100 dark:bg-primary-700 rounded-lg group-hover:bg-accent-600 dark:group-hover:bg-primary-600 transition-colors">
+                      <div className="text-accent-600 dark:text-primary-300 group-hover:text-white transition-colors">{contact.icon}</div>
                     </div>
                     <div>
-                      <p className="text-xs text-primary-600 font-medium uppercase tracking-wide">
+                      <p className="text-xs text-primary-600 dark:text-primary-400 font-medium uppercase tracking-wide">
                         {contact.label}
                       </p>
-                      <p className="text-base text-primary-900 font-semibold group-hover:text-accent-600 transition-colors">
+                      <p className="text-base text-primary-900 dark:text-white font-semibold group-hover:text-accent-600 dark:group-hover:text-primary-300 transition-colors">
                         {contact.value}
                       </p>
                     </div>
                   </a>
                 ) : (
                   <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 p-3 bg-accent-100 rounded-lg">
-                      <div className="text-accent-600">{contact.icon}</div>
+                    <div className="flex-shrink-0 p-3 bg-accent-100 dark:bg-primary-700 rounded-lg">
+                      <div className="text-accent-600 dark:text-primary-300">{contact.icon}</div>
                     </div>
                     <div>
-                      <p className="text-xs text-primary-600 font-medium uppercase tracking-wide">
+                      <p className="text-xs text-primary-600 dark:text-primary-400 font-medium uppercase tracking-wide">
                         {contact.label}
                       </p>
-                      <p className="text-base text-primary-900 font-semibold">
+                      <p className="text-base text-primary-900 dark:text-white font-semibold">
                         {contact.value}
                       </p>
                     </div>
@@ -87,17 +87,17 @@ const Contact = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="text-center bg-white/60 backdrop-blur-sm border border-primary-200 rounded-2xl p-10 hover:bg-white hover:border-accent-600 hover:shadow-lg transition-all duration-200">
-            <h3 className="font-display text-2xl font-bold text-primary-900 mb-4">
+          <div className="text-center bg-white/60 dark:bg-primary-800/60 backdrop-blur-sm border border-primary-200 dark:border-primary-700 rounded-2xl p-10 hover:bg-white dark:hover:bg-primary-800 hover:border-accent-600 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-200">
+            <h3 className="font-display text-2xl font-bold text-primary-900 dark:text-white mb-4">
               Seeking Software Engineering Internship
             </h3>
-            <p className="text-primary-700 mb-8 max-w-xl mx-auto">
+            <p className="text-primary-700 dark:text-primary-300 mb-8 max-w-xl mx-auto">
               Looking for in-person or hybrid opportunities in Vancouver to work with experienced teams
             </p>
             <div className="flex flex-col items-center gap-4">
               <a
                 href="mailto:FelixNg1022@gmail.com"
-                className="group inline-flex items-center justify-center px-8 py-4 bg-accent-600 text-white rounded-xl font-semibold hover:bg-accent-700 transition-all duration-200 cursor-pointer"
+                className="group inline-flex items-center justify-center px-8 py-4 bg-accent-600 dark:bg-primary-600 text-white rounded-xl font-semibold hover:bg-accent-700 dark:hover:bg-primary-500 transition-all duration-200 cursor-pointer"
               >
                 Send Email
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -106,7 +106,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/felixng1022/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white/60 backdrop-blur-sm border border-primary-300 text-primary-900 rounded-xl font-semibold hover:bg-white hover:border-accent-600 transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/60 dark:bg-primary-900/60 backdrop-blur-sm border border-primary-300 dark:border-primary-600 text-primary-900 dark:text-white rounded-xl font-semibold hover:bg-white dark:hover:bg-primary-700 hover:border-accent-600 dark:hover:border-primary-500 transition-all duration-200 cursor-pointer"
               >
                 Connect on LinkedIn
               </a>
