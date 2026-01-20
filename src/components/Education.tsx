@@ -29,7 +29,7 @@ const Education = () => {
                   University of British Columbia
                 </h3>
                 <p className="text-lg text-accent-600 dark:text-accent-400 font-semibold mb-2">
-                  BSc Computer Science + Business
+                  Bachelors in Computer Science + Business
                 </p>
                 <p className="text-primary-600 dark:text-primary-400 mb-6">
                   Vancouver, BC • Graduating May 2027
