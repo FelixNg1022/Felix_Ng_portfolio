@@ -1,4 +1,4 @@
-import { Briefcase, Calendar } from 'lucide-react'
+import { Briefcase, Calendar, FileText, ExternalLink } from 'lucide-react'
 
 const Experience = () => {
   const experiences = [
@@ -10,6 +10,7 @@ const Experience = () => {
         'Studied player perception of lying and deception in video games',
         'Analyzed 29 players\' behavior focusing on trust dynamics',
       ],
+      paperLink: 'https://programs.sigchi.org/chi/2024/program/content/146790',
     },
     {
       title: 'IT Director & Lead Developer',
@@ -75,6 +76,20 @@ const Experience = () => {
                   </li>
                 ))}
               </ul>
+              {exp.paperLink && (
+                <div className="mt-4 md:ml-16">
+                  <a
+                    href={exp.paperLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-accent-600 dark:text-primary-300 hover:text-accent-700 dark:hover:text-white font-semibold text-sm transition-colors"
+                  >
+                    <FileText className="mr-2" size={16} />
+                    View Publication
+                    <ExternalLink className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" size={14} />
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -1,4 +1,4 @@
-import { Code, Cpu, Users } from 'lucide-react'
+import { Code, Cpu, Users, ExternalLink } from 'lucide-react'
 
 const About = () => {
   const highlights = [
@@ -11,6 +11,7 @@ const About = () => {
       icon: <Cpu className="w-6 h-6" />,
       title: 'HCI Research',
       description: 'Studied player perception and trust dynamics in video game interactions',
+      link: 'https://programs.sigchi.org/chi/2024/program/content/146790',
     },
     {
       icon: <Users className="w-6 h-6" />,
@@ -41,20 +42,30 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {highlights.map((item, index) => (
-              <div
-                key={index}
-                className="group bg-white/60 dark:bg-primary-900/60 backdrop-blur-sm border border-primary-200 dark:border-primary-700 rounded-xl p-6 hover:bg-white dark:hover:bg-primary-800 hover:border-accent-600 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-200 cursor-pointer"
-              >
-                <div className="flex items-center justify-center w-12 h-12 bg-accent-100 dark:bg-primary-700 rounded-lg mb-4 group-hover:bg-accent-600 dark:group-hover:bg-primary-600 transition-colors">
-                  <div className="text-accent-600 dark:text-primary-300 group-hover:text-white transition-colors">{item.icon}</div>
-                </div>
-                <h3 className="font-display text-lg font-semibold text-primary-900 dark:text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-primary-600 dark:text-primary-400 text-sm">{item.description}</p>
-              </div>
-            ))}
+            {highlights.map((item, index) => {
+              const CardWrapper = item.link ? 'a' : 'div'
+              const linkProps = item.link ? { href: item.link, target: '_blank', rel: 'noopener noreferrer' } : {}
+              return (
+                <CardWrapper
+                  key={index}
+                  {...linkProps}
+                  className={`group bg-white/60 dark:bg-primary-900/60 backdrop-blur-sm border border-primary-200 dark:border-primary-700 rounded-xl p-6 hover:bg-white dark:hover:bg-primary-800 hover:border-accent-600 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-200 ${item.link ? 'cursor-pointer' : ''}`}
+                >
+                  <div className="flex items-center justify-center w-12 h-12 bg-accent-100 dark:bg-primary-700 rounded-lg mb-4 group-hover:bg-accent-600 dark:group-hover:bg-primary-600 transition-colors">
+                    <div className="text-accent-600 dark:text-primary-300 group-hover:text-white transition-colors">{item.icon}</div>
+                  </div>
+                  <div className="flex items-center mb-2">
+                    <h3 className="font-display text-lg font-semibold text-primary-900 dark:text-white">
+                      {item.title}
+                    </h3>
+                    {item.link && (
+                      <ExternalLink className="ml-2 w-4 h-4 text-accent-600 dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    )}
+                  </div>
+                  <p className="text-primary-600 dark:text-primary-400 text-sm">{item.description}</p>
+                </CardWrapper>
+              )
+            })}
           </div>
         </div>
       </div>

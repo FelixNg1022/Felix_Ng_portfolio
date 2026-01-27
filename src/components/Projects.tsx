@@ -1,7 +1,14 @@
-import { ExternalLink, Github, Award } from 'lucide-react'
+import { ExternalLink, Github, Award, Globe } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
+    {
+      title: 'AI Code Review Assistant',
+      description: 'AI-powered code review app built on Cloudflare Workers, featuring real-time analysis with Llama 3.3, GitHub PR integration, and conversation memory via Durable Objects.',
+      tech: ['TypeScript', 'React', 'Cloudflare Workers', 'Workers AI', 'Durable Objects'],
+      github: 'https://github.com/FelixNg1022/cf_ai_code_review',
+      live: 'https://cf-ai-code-review-frontend.pages.dev',
+    },
     {
       title: 'RoastMySubs',
       description: `RoastMySubs is a Chrome extension that connects to your bank via Plaid to automatically detect subscription payments.`,
@@ -75,18 +82,32 @@ const Projects = () => {
                 )}
               </div>
 
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-accent-600 dark:text-primary-300 hover:text-accent-700 dark:hover:text-white font-semibold text-sm transition-colors group cursor-pointer"
-                >
-                  <Github className="mr-2" size={16} />
-                  View Code
-                  <ExternalLink className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" size={14} />
-                </a>
-              )}
+              <div className="flex flex-wrap gap-4">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-accent-600 dark:text-primary-300 hover:text-accent-700 dark:hover:text-white font-semibold text-sm transition-colors cursor-pointer"
+                  >
+                    <Github className="mr-2" size={16} />
+                    View Code
+                    <ExternalLink className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" size={14} />
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-accent-600 dark:text-primary-300 hover:text-accent-700 dark:hover:text-white font-semibold text-sm transition-colors cursor-pointer"
+                  >
+                    <Globe className="mr-2" size={16} />
+                    Live Demo
+                    <ExternalLink className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" size={14} />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
