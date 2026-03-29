@@ -1,28 +1,28 @@
 const Skills = () => {
   const skillCategories = [
     {
-      category: 'AI & ML',
-      skills: ['Zypher', 'Groq', 'OpenAI', 'LLMs', 'RxJS'],
-    },
-    {
       category: 'Languages',
-      skills: ['TypeScript', 'JavaScript', 'Python', 'Java', 'Go', 'SQL'],
+      skills: ['TypeScript', 'JavaScript', 'Python', 'Go', 'Java', 'C/C++', 'SQL', 'R', 'HTML', 'CSS'],
     },
     {
       category: 'Frontend',
-      skills: ['React', 'Tailwind CSS', 'Vite', 'Responsive Design'],
+      skills: ['React', 'Next.js', 'Tailwind CSS', 'Figma', 'Responsive Design'],
     },
     {
-      category: 'Backend',
-      skills: ['Node.js', 'Deno', 'Express', 'Flask', 'REST APIs'],
+      category: 'Backend & APIs',
+      skills: ['Node.js', 'Express.js', 'Flask', 'Gin', 'REST APIs', 'GraphQL', 'OAuth 2.0', 'JWT'],
     },
     {
-      category: 'Databases',
-      skills: ['PostgreSQL', 'MySQL', 'Redis', 'Firebase'],
+      category: 'Cloud & DevOps',
+      skills: ['AWS', 'Azure', 'Cloudflare Workers', 'Docker', 'Kubernetes', 'CI/CD', 'GitHub Actions'],
     },
     {
-      category: 'Tools & Methods',
-      skills: ['Git', 'Agile/Scrum', 'System Design', 'HCI'],
+      category: 'Databases & Messaging',
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Firebase', 'Kafka', 'RabbitMQ'],
+    },
+    {
+      category: 'AI/ML & Tools',
+      skills: ['LangGraph', 'LLM Orchestration', 'Prompt Engineering', 'LLaMA', 'Groq', 'MCP'],
     },
   ]
 

@@ -37,7 +37,7 @@ const Contact = () => {
           </h2>
           <div className="w-16 h-1 bg-accent-600 mx-auto mb-6"></div>
           <p className="text-lg text-primary-700 dark:text-primary-300 max-w-2xl mx-auto">
-            Open to internship opportunities and collaborations
+            Open to internship opportunities, collaborations, and interesting projects
           </p>
         </div>
 
@@ -89,10 +89,10 @@ const Contact = () => {
           {/* CTA Section */}
           <div className="text-center bg-white/60 dark:bg-primary-800/60 backdrop-blur-sm border border-primary-200 dark:border-primary-700 rounded-2xl p-10 hover:bg-white dark:hover:bg-primary-800 hover:border-accent-600 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-200">
             <h3 className="font-display text-2xl font-bold text-primary-900 dark:text-white mb-4">
-              Seeking Software Engineering Internship
+              Open to Software Engineering Internships
             </h3>
             <p className="text-primary-700 dark:text-primary-300 mb-8 max-w-xl mx-auto">
-              Looking for in-person or hybrid opportunities in Vancouver to work with experienced teams
+              Founding engineer with startup experience, looking to join experienced teams and grow as an engineer
             </p>
             <div className="flex flex-col items-center gap-4">
               <a

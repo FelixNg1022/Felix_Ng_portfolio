@@ -27,7 +27,7 @@ const Hero = () => {
               Felix Ng
             </h1>
             <p className="text-xl md:text-2xl text-primary-600 dark:text-primary-400 font-medium max-w-xl mb-8">
-              Building AI agents & full-stack applications
+              Founding Engineer. Building AI systems & full-stack products.
             </p>
 
             {/* Social Links */}

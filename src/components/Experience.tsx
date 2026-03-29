@@ -1,34 +1,49 @@
-import { Briefcase, Calendar, FileText, ExternalLink } from 'lucide-react'
+import { Briefcase, Calendar, FileText, ExternalLink, Globe } from 'lucide-react'
 
 const Experience = () => {
   const experiences = [
     {
-      title: 'HCI Research Contributor',
+      title: 'Founding Engineer',
+      company: 'Bid Engine',
+      period: 'March 2026 – Present',
+      description: [
+        'Architected UI/UX overhaul with React/TypeScript and PostgreSQL backend, onboarding early-adopting vendors across GTA',
+        'Optimized PDF parsing pipeline with Python and LLM-powered subagent, improving processing speed by 70%',
+        'Deployed containerized services with Docker on AWS EC2, implementing CI/CD pipeline via GitHub Actions',
+        'Integrated Kafka event streaming for real-time pricing updates with Redis caching optimization',
+      ],
+      companyLink: 'https://www.bidengine.ca',
+    },
+    {
+      title: 'Co-Founder & Founding Engineer',
+      company: 'Stealth Startup',
+      period: 'Dec 2025 – Feb 2026',
+      description: [
+        'Architected multi-agent AI system with Python/LangGraph orchestration, reducing manual prospecting by 80%+',
+        'Engineered full backend with PostgreSQL, RESTful APIs and async task queues, shipping production web app',
+        'Built discovery and outreach scoring system with Flask APIs and Redis caching',
+        'Secured $500K in funding and accepted into Shanghai incubator validating product-market fit',
+      ],
+    },
+    {
+      title: 'Research Intern',
       company: 'University of British Columbia',
       period: 'May 2023 – Apr 2024',
       description: [
-        'Studied player perception of lying and deception in video games',
-        'Analyzed 29 players\' behavior focusing on trust dynamics',
+        'Published peer-reviewed paper at CHI 2024 on AI agent deception, studying hallucinations and trust',
+        'Developed AlphaBetaCity social deduction game with Unity/C# and MongoDB backend',
+        'Conducted mixed-methods analysis with Python and PostgreSQL, contributing findings on human perception of AI',
       ],
       paperLink: 'https://programs.sigchi.org/chi/2024/program/content/146790',
     },
     {
       title: 'IT Director & Lead Developer',
       company: 'UBC Sauder CUS',
-      period: 'Apr 2023 – Apr 2024',
+      period: 'Oct 2022 – Apr 2024',
       description: [
-        'Maintained production systems serving thousands of students',
-        'Improved 23 websites - 25% better Lighthouse scores, 18% faster load times',
-        'Led Agile/Scrum sprints and supported 1000+ users',
-      ],
-    },
-    {
-      title: 'IT Associate & Developer',
-      company: 'UBC Sauder CUS',
-      period: 'Oct 2022 – Apr 2023',
-      description: [
-        'Developed and maintained web applications',
-        'Gained production systems and user support experience',
+        'Optimized 23 websites improving Lighthouse performance scores by 25%, refactoring with React architecture',
+        'Reduced mobile page load time by 18% for 1,000+ users, auditing and removing unused libraries',
+        'Architected CI/CD pipeline with GitHub Actions and Docker, leading Agile sprints with teams',
       ],
     },
   ]
@@ -58,9 +73,16 @@ const Experience = () => {
                     <h3 className="font-display text-xl font-bold text-primary-900 dark:text-white">
                       {exp.title}
                     </h3>
-                    <p className="text-accent-600 dark:text-accent-400 font-semibold">
-                      {exp.company}
-                    </p>
+                    {exp.companyLink ? (
+                      <a href={exp.companyLink} target="_blank" rel="noopener noreferrer" className="text-accent-600 dark:text-accent-400 font-semibold hover:text-accent-700 dark:hover:text-accent-300 inline-flex items-center transition-colors">
+                        {exp.company}
+                        <Globe className="ml-1.5 w-3.5 h-3.5" />
+                      </a>
+                    ) : (
+                      <p className="text-accent-600 dark:text-accent-400 font-semibold">
+                        {exp.company}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="flex items-center text-primary-600 dark:text-primary-400 text-sm md:ml-4">
