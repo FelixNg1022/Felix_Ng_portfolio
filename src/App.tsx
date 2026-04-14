@@ -27,6 +27,12 @@ function App() {
             <p className="text-primary-400 text-sm">
               &copy; {new Date().getFullYear()} Felix Ng
             </p>
+            <div
+              className="mt-4 flex justify-center text-lg"
+              data-webring="ca"
+              data-member="felix-ng"
+              style={{ '--webring-color': '#a1a1aa', '--webring-accent': '#AF272F' } as Record<string, string>}
+            />
           </div>
         </footer>
       </div>
